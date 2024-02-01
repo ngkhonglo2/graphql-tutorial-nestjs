@@ -19,14 +19,4 @@ export const mockUsers = [
     userName: 'C',
     displayName: 'cnt',
   },
-  {
-    id: 5,
-    userName: 'D',
-    displayName: 'dnt',
-  },
-  {
-    id: 6,
-    userName: 'E',
-    displayName: 'ent',
-  },
 ];
