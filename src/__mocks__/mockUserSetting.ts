@@ -2,7 +2,7 @@ export const mockUsersSetting = [
   {
     userId: 1,
     receiveNotification: false,
-    displayName: false,
+    receiceEmails: false,
   },
   {
     userId: 2,
