@@ -6,9 +6,11 @@ import { mockUsersSetting } from 'src/__mocks__/mockUserSetting';
 @Resolver()
 export class UserSettingResolver {
   @Mutation((returns) => UserSetting)
-  createUserSetting(@Args('createUserSettingData') createUserSettingData: CreateUserSettingInput) {
-    console.log(createUserSettingData);
-    mockUsersSetting.push(createUserSettingData)
-    return createUserSettingData
+  createUserSetting(
+    @Args('createUserSettingData')
+    createUserSettingData: CreateUserSettingInput,
+  ) {
+    mockUsersSetting.push(createUserSettingData);
+    return createUserSettingData;
   }
 }
