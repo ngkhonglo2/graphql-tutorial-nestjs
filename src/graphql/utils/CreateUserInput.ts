@@ -6,5 +6,5 @@ export class CreateUserInput {
   userName: string;
 
   @Field({ nullable: true })
-  displayName: string;
+  displayName?: string;
 }
