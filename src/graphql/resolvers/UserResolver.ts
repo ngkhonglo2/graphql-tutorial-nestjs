@@ -29,6 +29,7 @@ export class UserResolver {
   getUserSettings(@Parent() user: User) {
     return mockUsersSetting.find((setting) => setting.userId === user.id);
   }
+
   @Mutation((returns) => User)
   createUser(@Args('createUserData') createUserData: CreateUserInput) {
     const { userName, displayName } = createUserData;
