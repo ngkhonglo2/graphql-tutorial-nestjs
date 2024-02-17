@@ -4,7 +4,6 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './graphql/models/User';
 import { UserSetting } from './graphql/models/UserSetting';
-import { UserSettingResolver } from './graphql/resolvers/UserSettingResolver';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -25,6 +24,6 @@ import { UsersModule } from './users/users.module';
     UsersModule,
   ],
   controllers: [],
-  providers: [UserSettingResolver],
+  providers: [],
 })
 export class AppModule {}

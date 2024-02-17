@@ -1,16 +1,19 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { UserSetting } from '../models/UserSetting';
 import { CreateUserSettingInput } from '../utils/CreateUserSettingInput';
-import { mockUsersSetting } from 'src/__mocks__/mockUserSetting';
+import { UserSettingService } from 'src/users/UserSettingService';
 
 @Resolver()
 export class UserSettingResolver {
+  constructor(private userSettingService: UserSettingService) {}
   @Mutation((returns) => UserSetting)
-  createUserSetting(
+  async createUserSetting(
     @Args('createUserSettingData')
     createUserSettingData: CreateUserSettingInput,
   ) {
-    mockUsersSetting.push(createUserSettingData);
-    return createUserSettingData;
+    const userSetting = await this.userSettingService.createUserSettings(
+      createUserSettingData,
+    );
+    return userSetting;
   }
 }
